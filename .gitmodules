@@ -1,0 +1,3 @@
+[submodule "serverless-handlers"]
+	path = serverless-handlers
+	url = https://github.com/paulofelipefeitosa/serverless-handlers
