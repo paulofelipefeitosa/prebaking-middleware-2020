@@ -66,15 +66,14 @@ cd serverless-handlers
 bash run-experiment.sh java noop 200 criu ../noop-vanilla-config.json > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
-execution logs. You can consult these files to identify any unexpected error 
-during the experiment execution.
+execution logs.
 
 If the above commands execute successfully, then an 
 [output CSV file](serverless-handlers/README.md#results-artifact) will be created 
 containing all the collected metrics during the experiment execution. A successful
 output file will hold the metrics data for 200 executions with 200 requests each.
 
-Please quick check this file and rename it to `startup-time-java-noop-vanilla.csv`.
+Please quick check the output file and rename it to `startup-time-java-noop-prebaking.csv`.
 
 #### Java Image-Resizer
 
