@@ -20,14 +20,12 @@ experiments.
 First of all, its required to install all `serverless-handlers` dependencies that 
 were describe in section [dependencies](serverless-handlers/README.md#dependencies).
 
-### Experiments
-
-#### Function Start-up Time
+### Function Start-up Time Experiment
 
 Function Start-up Time experiment points to all executed experiments to generate
 the results for the paper section `4.2`.
  
-##### Java NOOP Vanilla
+#### NOOP
 
 Inside the current directory, create a 
 [`Load Generator Config`](serverless-handlers/README.md#load-generator-config) 
@@ -42,7 +40,9 @@ file named `noop-vanilla-config.json` which holds the following content:
 }
 ```
 
-After it, you can execute the experiment using the following commands:
+##### Vanilla
+
+Execute the experiment using the following commands:
 ``` shell script
 cd serverless-handlers
 bash run-experiment.sh java noop 200 no-criu ../noop-vanilla-config.json > log.out 2> log.err
@@ -58,9 +58,31 @@ output file will hold the metrics data for 200 executions with 200 requests each
 
 Please quick check this file and rename it to `startup-time-java-noop-vanilla.csv`.
 
-##### Java Image-Resizer Vanilla
+##### Prebaking
+
+Execute the experiment using the following commands:
+``` shell script
+cd serverless-handlers
+bash run-experiment.sh java noop 200 criu ../noop-vanilla-config.json > log.out 2> log.err
+```
+The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
+execution logs. You can consult these files to identify any unexpected error 
+during the experiment execution.
+
+If the above commands execute successfully, then an 
+[output CSV file](serverless-handlers/README.md#results-artifact) will be created 
+containing all the collected metrics during the experiment execution. A successful
+output file will hold the metrics data for 200 executions with 200 requests each.
+
+Please quick check this file and rename it to `startup-time-java-noop-vanilla.csv`.
+
+#### Java Image-Resizer
 
 [Download the image...]
+
+##### Vanilla
+
+##### Prebaking
 
 TODO(paulofelipefeitosa):
 
