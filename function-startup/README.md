@@ -196,3 +196,7 @@ Please quick check this file and rename it to `startup-time-markdown-prebaking.c
 ## Data Analysis
 
 TODO(paulofelipefeitosa): describe this section.
+
+### Service Time
+
+TODO(paulofelipefeitosa): describe this section.
