@@ -13,7 +13,8 @@ The following bash commands may require `super user` rights.
 ## NOOP
 
 The [`NOOP`](https://github.com/paulofelipefeitosa/serverless-handlers/tree/master/functions/java/noop) 
-is a do-nothing function.
+is a do-nothing function, and for this function we should perform two experiments:
+`Vanilla` and `Prebaking`.
 
 Inside the current directory, create a 
 [`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#load-generator-config) 
@@ -30,7 +31,8 @@ file named `noop-config.json` which holds the following content:
 
 ### NOOP Vanilla
 
-Execute the `Function Start-up NOOP Vanilla` experiment using the following commands:
+After the configuration steps, we should execute the `Function Start-up NOOP Vanilla` 
+experiment using the following commands:
 ``` shell script
 # cd serverless-handlers
 # bash run-experiment.sh java noop 200 no-criu ../noop-config.json > log.out 2> log.err
@@ -49,7 +51,8 @@ Please quick check this file and rename it to `startup-time-noop-vanilla.csv`.
 
 ### NOOP Prebaking
 
-Execute the `Function Start-up NOOP Prebaking` experiment using the following commands:
+Now, we can execute the `Function Start-up NOOP Prebaking` experiment using the 
+following commands:
 ``` shell script
 # cd serverless-handlers
 # bash run-experiment.sh java noop 200 criu ../noop-config.json > log.out 2> log.err
@@ -75,6 +78,9 @@ do it.
 ``` shell script
 $ wget https://i.imgur.com/BhlDUOR.jpg
 ```
+
+The `Image-Resizer` function was evaluate in the two experimental scenarios: 
+`Vanilla` and `Prebaking`.
 
 Inside the current directory, create a 
 [`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#load-generator-config) 
@@ -113,7 +119,7 @@ Please quick check this file and rename it to `startup-time-image_resizer-vanill
 
 ### Image-Resizer Prebaking
 
-After the configuration steps, you can execute the `Function Start-up Image-Resizer Prebaking` 
+Now, you can execute the `Function Start-up Image-Resizer Prebaking` 
 experiment using the following commands:
 ``` shell script
 # cd serverless-handlers
@@ -140,6 +146,8 @@ The following command downloads the file and rename it to `OpenPiton-README.md`:
 $ wget -O OpenPiton-README.md https://raw.githubusercontent.com/PrincetonUniversity/openpiton/openpiton/README.md
 ```
 
+The `Markdown` function must be evaluated by two experiments: `Vanilla` and `Prebaking`.
+
 Inside the current directory, you need to create a 
 [`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#load-generator-config) 
 file named `markdown-config.json`, holding the below content. The `Bodyfilepath`
@@ -159,7 +167,7 @@ OpenPiton `README.md`.
 
 ### Markdown Vanilla
 
-Now you can execute the `Function Start-up Markdown Vanilla` 
+First, we should execute the `Function Start-up Markdown Vanilla` 
 experiment using the following commands:
 ``` shell script
 # cd serverless-handlers
@@ -177,7 +185,7 @@ Please quick check this file and rename it to `startup-time-markdown-vanilla.csv
 
 ### Markdown Prebaking
 
-Now you can execute the `Function Start-up Markdown Prebaking` 
+And finally, we must execute the `Function Start-up Markdown Prebaking` 
 experiment using the following commands:
 ``` shell script
 # cd serverless-handlers
