@@ -5,7 +5,7 @@ conducted for the paper work "**Prebaking Functions to Warm the Serverless Cold 
 This repository also holds the data, and the data analysis scripts used to generate the 
 paper main results.
 
-## Reproduce the Experiments
+## Reproduce Experiments
 
 The module [serverless-handlers](https://github.com/paulofelipefeitosa/serverless-handlers) contains the required 
 software to conduct the experiments described in the paper. The 
@@ -32,7 +32,7 @@ the results for the paper section `4.2`.
 [Here](function-startup/README.md) you can access all required steps to reproduce 
 the `Function Start-up Time` experiments.
 
-## Data
+## Generate Paper Main Results from Data
 
 TODO(paulofelipefeitosa): describe this section.
 

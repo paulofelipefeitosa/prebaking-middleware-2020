@@ -8,10 +8,11 @@ using the `Vanilla` and `Prebaking` techniques.
  
 #### NOOP
 
-The [`NOOP`](https://github.com/paulofelipefeitosa/serverless-handlers/functions/java/noop) is a do-nothing function.
+The [`NOOP`](https://github.com/paulofelipefeitosa/serverless-handlers/tree/master/functions/java/noop) 
+is a do-nothing function.
 
 Inside the current directory, create a 
-[`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/README.md#load-generator-config) 
+[`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#load-generator-config) 
 file named `noop-config.json` which holds the following content:
 ``` json
 {
@@ -35,9 +36,10 @@ execution logs. You can consult these files to identify any unexpected error
 during the experiment execution.
 
 If the above commands execute successfully, then an 
-[output CSV file](https://github.com/paulofelipefeitosa/serverless-handlers/README.md#results-artifact) will be created 
-containing all the collected metrics during the experiment execution. A successful
-output file will hold the metrics data for 200 executions with 200 requests each.
+[output CSV file](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#results-artifact) 
+will be created containing all the collected metrics during the experiment execution. 
+A successful output file will hold the metrics data for 200 executions with 200 
+requests each.
 
 Please quick check this file and rename it to `startup-time-noop-vanilla.csv`.
 
@@ -52,15 +54,17 @@ The files `log.out` and `log.err` file will contain the `stdout` and `stderr`
 execution logs.
 
 If the above commands execute successfully, then an 
-[output CSV file](https://github.com/paulofelipefeitosa/serverless-handlers/README.md#results-artifact) will be created 
-containing all the collected metrics during the experiment execution. A successful
-output file will hold the metrics data for 200 executions with 200 requests each.
+[output CSV file](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#results-artifact) 
+will be created containing all the collected metrics during the experiment execution. 
+A successful output file will hold the metrics data for 200 executions with 200 
+requests each.
 
 Please quick check the output file and rename it to `startup-time-noop-prebaking.csv`.
 
 #### Image-Resizer
 
-The [`Image-Resizer`](https://github.com/paulofelipefeitosa/serverless-handlers/functions/java/thumbnailator) app scales down an image, then we need to download the image used
+The [`Image-Resizer`](https://github.com/paulofelipefeitosa/serverless-handlers/tree/master/functions/java/thumbnailator) 
+app scales down an image, then we need to download the image used
 to evaluate the Image-Resizer application. The following command describes how to 
 do it.
 
@@ -69,7 +73,7 @@ wget https://i.imgur.com/BhlDUOR.jpg
 ```
 
 Inside the current directory, create a 
-[`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/README.md#load-generator-config) 
+[`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#load-generator-config) 
 file named `image_resizer-config.json`, holding the below content. The `EnvVars`
 property must declare the variables `scale` and `image_path`. The `image_path` var
 should point to the absolute path of the downloaded image named `BhlDUOR.jpg`.
@@ -97,8 +101,8 @@ The files `log.out` and `log.err` file will contain the `stdout` and `stderr`
 execution logs.
 
 If the above commands execute successfully, then an 
-[output CSV file](https://github.com/paulofelipefeitosa/serverless-handlers/README.md#results-artifact) will be created 
-containing all collected metrics. A successful
+[output CSV file](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#results-artifact) 
+will be created containing all collected metrics. A successful
 output file will hold the metrics data for 200 executions with 200 requests each.
 
 Please quick check this file and rename it to `startup-time-image_resizer-vanilla.csv`.
@@ -115,16 +119,16 @@ The files `log.out` and `log.err` file will contain the `stdout` and `stderr`
 execution logs.
 
 If the above commands execute successfully, then an 
-[output CSV file](https://github.com/paulofelipefeitosa/serverless-handlers/README.md#results-artifact) will be created 
-containing all collected metrics. A successful
+[output CSV file](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#results-artifact) 
+will be created containing all collected metrics. A successful
 output file will hold the metrics data for 200 executions with 200 requests each.
 
 Please quick check this file and rename it to `startup-time-image_resizer-prebaking.csv`.
 
 #### Markdown
 
-The [`Markdown`](https://github.com/paulofelipefeitosa/serverless-handlers/functions/java/markdown) function renders 
-markdown files into HTML. To evaluate this function we used the 
+The [`Markdown`](https://github.com/paulofelipefeitosa/serverless-handlers/tree/master/functions/java/markdown) 
+function renders markdown files into HTML. To evaluate this function we used the 
 [OpenPiton](https://github.com/PrincetonUniversity/openpiton) `README.md`.
 
 The following command downloads the file and rename it to `OpenPiton-README.md`:
@@ -133,7 +137,7 @@ wget -O OpenPiton-README.md https://raw.githubusercontent.com/PrincetonUniversit
 ```
 
 Inside the current directory, you need to create a 
-[`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/README.md#load-generator-config) 
+[`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#load-generator-config) 
 file named `markdown-config.json`, holding the below content. The `Bodyfilepath`
 field from the `RequestSpec` property must point to the absolute path of the 
 OpenPiton `README.md`.
@@ -161,7 +165,7 @@ The files `log.out` and `log.err` file will contain the `stdout` and `stderr`
 execution logs.
 
 If the above commands execute successfully, then an 
-[output CSV file](https://github.com/paulofelipefeitosa/serverless-handlers/README.md#results-artifact) will be created 
+[output CSV file](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#results-artifact) will be created 
 containing all collected metrics. A successful
 output file will hold the metrics data for 200 executions with 200 requests each.
 
@@ -179,7 +183,7 @@ The files `log.out` and `log.err` file will contain the `stdout` and `stderr`
 execution logs.
 
 If the above commands execute successfully, then an 
-[output CSV file](https://github.com/paulofelipefeitosa/serverless-handlers/README.md#results-artifact) will be created 
+[output CSV file](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#results-artifact) will be created 
 containing all collected metrics. A successful
 output file will hold the metrics data for 200 executions with 200 requests each.
 
