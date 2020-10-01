@@ -1,6 +1,11 @@
 # Choosing The (Pre)Baking Ingredients
 
-[What?]
+The Choosing The (Pre)Baking Ingredients experiments reference to all conducted
+experiments for the paper section `4.2.2`. These experiments evaluate three functions
+with different size of dependencies:
+1. **`Small`** - dependencies with 50 classes.
+2. **`Medium`** - dependencies with 250 classes.
+3. **`Big`** - dependencies with 1250 classes.
 
 ## Setup
 
