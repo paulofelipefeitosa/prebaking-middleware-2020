@@ -9,8 +9,8 @@ paper main results.
 
 The module [serverless-handlers](https://github.com/paulofelipefeitosa/serverless-handlers) contains the required 
 software to conduct the experiments described in the paper. The 
-[README.md](https://github.com/paulofelipefeitosa/serverless-handlers/README.md) outlines how to run an experiment to 
-measure serverless applications start-up time.
+[README.md](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md) 
+outlines how to run an experiment to measure serverless applications start-up time.
 
 However, in this section we describe the required steps to reproduce all the paper 
 experiments.
@@ -18,7 +18,8 @@ experiments.
 ### Install Dependencies
 
 First of all, its required to install all `serverless-handlers` dependencies that 
-were describe in section [dependencies](https://github.com/paulofelipefeitosa/serverless-handlers/README.md#dependencies).
+were describe in section 
+[dependencies](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#dependencies).
 
 In addition, you need to install `wget` in order to execute the commands used in 
 the next sections. 
