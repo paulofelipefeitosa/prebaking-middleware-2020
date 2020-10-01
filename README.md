@@ -48,7 +48,7 @@ generate the results for the paper section `4.2.2`.
 [Here](choosing-ingredients/README.md) you can access all required steps to reproduce 
 the `Choosing Ingredients` experiments.
 
-## Generate Paper Main Results from Data
+## Generate Paper Main Results from Our Data
 
 TODO(paulofelipefeitosa): describe this section.
 
