@@ -26,11 +26,19 @@ the next sections.
 
 ### Function Start-up Time Experiments
 
-`Function Start-up Time` experiments reference to all executed experiments to generate
+The `Function Start-up Time` experiments reference to all executed experiments to generate
 the results for the paper section `4.2`.
 
 [Here](function-startup/README.md) you can access all required steps to reproduce 
 the `Function Start-up Time` experiments.
+
+### Start-up Components Experiments
+
+The `Start-up Components` experiments reference to all conducted experiments to 
+generate the results for the paper section `4.2.1`.
+
+[Here](startup-components/README.md) you can access all required steps to reproduce 
+the `Start-up Components` experiments.
 
 ## Generate Paper Main Results from Data
 

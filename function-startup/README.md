@@ -1,12 +1,16 @@
-### Function Start-up Time Experiments
+# Function Start-up Time Experiments
 
 Function Start-up Time experiments points to all executed experiments to generate
 the results for the paper section `4.2`.
 
 These experiments evaluate the `NOOP`, `Image-Resizer` and `Markdown` functions 
 using the `Vanilla` and `Prebaking` techniques.
+
+## Setup
+
+The following bash commands may require `super user` rights.
  
-#### NOOP
+## NOOP
 
 The [`NOOP`](https://github.com/paulofelipefeitosa/serverless-handlers/tree/master/functions/java/noop) 
 is a do-nothing function.
@@ -24,12 +28,12 @@ file named `noop-config.json` which holds the following content:
 }
 ```
 
-##### NOOP Vanilla
+### NOOP Vanilla
 
 Execute the `Function Start-up NOOP Vanilla` experiment using the following commands:
 ``` shell script
-cd serverless-handlers
-bash run-experiment.sh java noop 200 no-criu ../noop-config.json > log.out 2> log.err
+# cd serverless-handlers
+# bash run-experiment.sh java noop 200 no-criu ../noop-config.json > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
 execution logs. You can consult these files to identify any unexpected error 
@@ -43,12 +47,12 @@ requests each.
 
 Please quick check this file and rename it to `startup-time-noop-vanilla.csv`.
 
-##### NOOP Prebaking
+### NOOP Prebaking
 
 Execute the `Function Start-up NOOP Prebaking` experiment using the following commands:
 ``` shell script
-cd serverless-handlers
-bash run-experiment.sh java noop 200 criu ../noop-config.json > log.out 2> log.err
+# cd serverless-handlers
+# bash run-experiment.sh java noop 200 criu ../noop-config.json > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
 execution logs.
@@ -61,7 +65,7 @@ requests each.
 
 Please quick check the output file and rename it to `startup-time-noop-prebaking.csv`.
 
-#### Image-Resizer
+## Image-Resizer
 
 The [`Image-Resizer`](https://github.com/paulofelipefeitosa/serverless-handlers/tree/master/functions/java/thumbnailator) 
 app scales down an image, then we need to download the image used
@@ -69,7 +73,7 @@ to evaluate the Image-Resizer application. The following command describes how t
 do it.
 
 ``` shell script
-wget https://i.imgur.com/BhlDUOR.jpg
+$ wget https://i.imgur.com/BhlDUOR.jpg
 ```
 
 Inside the current directory, create a 
@@ -89,13 +93,13 @@ should point to the absolute path of the downloaded image named `BhlDUOR.jpg`.
 }
 ```
 
-##### Image-Resizer Vanilla
+### Image-Resizer Vanilla
 
 After the configuration steps, you can execute the `Function Start-up Image-Resizer Vanilla` 
 experiment using the following commands:
 ``` shell script
-cd serverless-handlers
-bash run-experiment.sh java thumbnailator 200 no-criu ../image_resizer-config.json > log.out 2> log.err
+# cd serverless-handlers
+# bash run-experiment.sh java thumbnailator 200 no-criu ../image_resizer-config.json > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
 execution logs.
@@ -107,13 +111,13 @@ output file will hold the metrics data for 200 executions with 200 requests each
 
 Please quick check this file and rename it to `startup-time-image_resizer-vanilla.csv`.
 
-##### Image-Resizer Prebaking
+### Image-Resizer Prebaking
 
 After the configuration steps, you can execute the `Function Start-up Image-Resizer Prebaking` 
 experiment using the following commands:
 ``` shell script
-cd serverless-handlers
-bash run-experiment.sh java thumbnailator 200 criu ../image_resizer-config.json > log.out 2> log.err
+# cd serverless-handlers
+# bash run-experiment.sh java thumbnailator 200 criu ../image_resizer-config.json > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
 execution logs.
@@ -125,7 +129,7 @@ output file will hold the metrics data for 200 executions with 200 requests each
 
 Please quick check this file and rename it to `startup-time-image_resizer-prebaking.csv`.
 
-#### Markdown
+## Markdown
 
 The [`Markdown`](https://github.com/paulofelipefeitosa/serverless-handlers/tree/master/functions/java/markdown) 
 function renders markdown files into HTML. To evaluate this function we used the 
@@ -133,7 +137,7 @@ function renders markdown files into HTML. To evaluate this function we used the
 
 The following command downloads the file and rename it to `OpenPiton-README.md`:
 ``` shell script
-wget -O OpenPiton-README.md https://raw.githubusercontent.com/PrincetonUniversity/openpiton/openpiton/README.md
+$ wget -O OpenPiton-README.md https://raw.githubusercontent.com/PrincetonUniversity/openpiton/openpiton/README.md
 ```
 
 Inside the current directory, you need to create a 
@@ -153,13 +157,13 @@ OpenPiton `README.md`.
 }
 ```
 
-##### Markdown Vanilla
+### Markdown Vanilla
 
 Now you can execute the `Function Start-up Markdown Vanilla` 
 experiment using the following commands:
 ``` shell script
-cd serverless-handlers
-bash run-experiment.sh java markdown 200 no-criu ../markdown-config.json > log.out 2> log.err
+# cd serverless-handlers
+# bash run-experiment.sh java markdown 200 no-criu ../markdown-config.json > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
 execution logs.
@@ -171,13 +175,13 @@ output file will hold the metrics data for 200 executions with 200 requests each
 
 Please quick check this file and rename it to `startup-time-markdown-vanilla.csv`.
 
-##### Markdown Prebaking
+### Markdown Prebaking
 
 Now you can execute the `Function Start-up Markdown Prebaking` 
 experiment using the following commands:
 ``` shell script
-cd serverless-handlers
-bash run-experiment.sh java markdown 200 criu ../markdown-config.json > log.out 2> log.err
+# cd serverless-handlers
+# bash run-experiment.sh java markdown 200 criu ../markdown-config.json > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
 execution logs.
@@ -188,3 +192,7 @@ containing all collected metrics. A successful
 output file will hold the metrics data for 200 executions with 200 requests each.
 
 Please quick check this file and rename it to `startup-time-markdown-prebaking.csv`.
+
+## Data Analysis
+
+TODO(paulofelipefeitosa): describe this section.
