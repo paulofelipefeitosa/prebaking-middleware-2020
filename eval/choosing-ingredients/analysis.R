@@ -45,12 +45,15 @@ calculate_median <- function(df, app) {
     max=df.t$conf.int[2]))
 }
 
+print("Prebaking-Warmup App Median Start-up Time")
 calculate_median(pb, "Small")
 calculate_median(pb, "Medium")
 calculate_median(pb, "Big")
+print("Prebaking-NOWarmup App Median Start-up Time")
 calculate_median(pb1, "Small")
 calculate_median(pb1, "Medium")
 calculate_median(pb1, "Big")
+print("Vanilla App Median Start-up Time")
 calculate_median(vanilla, "Small")
 calculate_median(vanilla, "Medium")
 calculate_median(vanilla, "Big")
@@ -84,17 +87,6 @@ ggplot(result, aes(x=app, value, fill=type)) +
     panel.grid.major.x = element_line(colour = "darkgray", linetype = 3))
 
 ggsave("impact_function_size_cmp.png")
-
-
-calculate_median <- function(df, app) {
-  df.t <- wilcox.test(df[df$app == app, ]$value, conf.int = T)
-  return(data.frame(
-    type=df$type,
-    app=app,
-    value=df.t$estimate,
-    min=df.t$conf.int[1],
-    max=df.t$conf.int[2]))
-}
 
 result <- calculate_median(vanilla, "Small")
 result <- rbind(result, calculate_median(vanilla, "Medium"))

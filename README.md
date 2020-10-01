@@ -50,8 +50,6 @@ the `Choosing Ingredients` experiments.
 
 ## Generate Paper Main Results from Our Data
 
-TODO(paulofelipefeitosa): describe this section.
-
-### Analysis
-
-TODO(paulofelipefeitosa): describe this subsection.
+The data along with the analysis scripts are stored inside the `eval` 
+directory. [There](eval/README.md) we explain how to analyze the data 
+and generate the paper main results.
