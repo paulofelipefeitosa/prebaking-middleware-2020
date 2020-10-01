@@ -40,6 +40,14 @@ generate the results for the paper section `4.2.1`.
 [Here](startup-components/README.md) you can access all required steps to reproduce 
 the `Start-up Components` experiments.
 
+### Choosing Ingredients Experiments
+
+The `Choosing Ingredients` experiments reference to all conducted experiments to 
+generate the results for the paper section `4.2.2`.
+
+[Here](choosing-ingredients/README.md) you can access all required steps to reproduce 
+the `Choosing Ingredients` experiments.
+
 ## Generate Paper Main Results from Data
 
 TODO(paulofelipefeitosa): describe this section.
