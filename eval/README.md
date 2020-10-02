@@ -19,6 +19,8 @@ generates the results artifacts used in the paper.
 
 ## Function Start-up Time Experiments
 
+TODO(): point to README.md
+
 To generate the results artifacts for the `Function Start-up Experiment`,
 described in the paper section `4.2`, you must run the following commands:
 ``` shell script
@@ -35,6 +37,8 @@ normality test performed for the experimental results.
 
 ## Start-up Components Experiments
 
+TODO(): point to README.md
+
 To generate the results artifacts for the `Start-up Components Experiment`,
 described in the paper section `4.2.1`, you must run the following commands:
 ``` shell script
@@ -47,6 +51,8 @@ plot are going to be stored: `new_stacked_startup_components_bar_plot.png`.
 This is the paper figure 4.
 
 ## Choosing Ingredients Experiments
+
+TODO(): point to README.md
 
 To generate the results artifacts for the `Choosing Ingredients Experiment`,
 described in the paper section `4.2.2`, you must run the following commands:
