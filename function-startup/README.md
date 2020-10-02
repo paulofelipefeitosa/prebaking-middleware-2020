@@ -16,7 +16,7 @@ The [`NOOP`](https://github.com/paulofelipefeitosa/serverless-handlers/tree/mast
 is a do-nothing function, and for this function we should perform two experiments:
 `Vanilla` and `Prebaking`.
 
-Inside the current directory, create a 
+Inside the `prebaking-middleware-2020` directory, create a 
 [`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#load-generator-config) 
 file named `noop-config.json` which holds the following content:
 ``` json
@@ -82,7 +82,7 @@ $ wget https://i.imgur.com/BhlDUOR.jpg
 The `Image-Resizer` function was evaluate in the two experimental scenarios: 
 `Vanilla` and `Prebaking`.
 
-Inside the current directory, create a 
+Inside the `prebaking-middleware-2020` directory, create a 
 [`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#load-generator-config) 
 file named `image_resizer-config.json`, holding the below content. The `EnvVars`
 property must declare the variables `scale` and `image_path`. The `image_path` var
@@ -148,7 +148,7 @@ $ wget -O OpenPiton-README.md https://raw.githubusercontent.com/PrincetonUnivers
 
 The `Markdown` function must be evaluated by two experiments: `Vanilla` and `Prebaking`.
 
-Inside the current directory, you need to create a 
+Inside the `prebaking-middleware-2020` directory, you need to create a 
 [`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#load-generator-config) 
 file named `markdown-config.json`, holding the below content. The `Bodyfilepath`
 field from the `RequestSpec` property must point to the absolute path of the 
@@ -185,7 +185,7 @@ Please quick check this file and rename it to `startup-time-markdown-vanilla.csv
 
 ### Markdown Prebaking
 
-And finally, we must execute the `Function Start-up Markdown Prebaking` 
+Finally, we must execute the `Function Start-up Markdown Prebaking` 
 experiment using the following commands:
 ``` shell script
 # cd serverless-handlers

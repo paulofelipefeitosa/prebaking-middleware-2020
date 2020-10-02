@@ -30,7 +30,7 @@ Please note that, all the following bash commands may require `super user` right
 The [`NOOP`](https://github.com/paulofelipefeitosa/serverless-handlers/tree/master/functions/java/noop) 
 is a do-nothing function. For the `NOOP` function we must perform two experiments: `Vanilla` and `Prebaking`.
 
-Inside the current directory, create a 
+Inside the `prebaking-middleware-2020` directory, create a 
 [`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#load-generator-config) 
 file named `noop-config.json` which holds the following content:
 ``` json
@@ -95,7 +95,7 @@ $ wget https://i.imgur.com/BhlDUOR.jpg
 
 For the `Image-Resizer` function we must perform two experiments: `Vanilla` and `Prebaking`.
 
-Inside the current directory, create a 
+Inside the `prebaking-middleware-2020`, create a 
 [`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#load-generator-config) 
 file named `image_resizer-config.json`, holding the below content. The `EnvVars`
 property must declare the variables `scale` and `image_path`. The `image_path` var
@@ -163,7 +163,7 @@ $ wget -O OpenPiton-README.md https://raw.githubusercontent.com/PrincetonUnivers
 
 For the `Markdown` function we also should perform two experiments: `Vanilla` and `Prebaking`.
 
-Inside the current directory, you need to create a 
+Inside the `prebaking-middleware-2020` directory, you need to create a 
 [`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#load-generator-config) 
 file named `markdown-config.json`, holding the below content. The `Bodyfilepath`
 field from the `RequestSpec` property must point to the absolute path of the 

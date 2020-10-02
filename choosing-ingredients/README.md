@@ -27,7 +27,7 @@ The [`NOOP Class Loader`](https://github.com/paulofelipefeitosa/serverless-handl
 is a function that has no business logic, but imports, compiles and uses a bunch of 
 classes during its execution.
 
-Before proceeding to the experiment details, inside the current directory, create a 
+Before proceeding to the experiment details, inside the `prebaking-middleware-2020` directory, create a 
 [`Load Generator Config`](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#load-generator-config) 
 file named `noop-class-loader-config.json` which will hold the following content:
 ``` json

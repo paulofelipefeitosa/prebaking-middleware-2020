@@ -17,12 +17,18 @@ experiments.
 
 ### Install Dependencies
 
-First of all, its required to install all `serverless-handlers` dependencies that 
-were describe in section 
+First of all, you need to clone this repository by running the following commands:
+``` shell script
+git clone https://github.com/paulofelipefeitosa/prebaking-middleware-2020
+cd prebaking-middleware-2020
+```
+
+After it, you need to install all `serverless-handlers` dependencies that 
+were describe in the section 
 [dependencies](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#dependencies).
 
-In addition, you need to install `wget` in order to execute the commands used in 
-the next sections. 
+In addition, you need to install `wget` in order to execute some commands 
+used in the next sections. 
 
 ### Function Start-up Time Experiments
 
