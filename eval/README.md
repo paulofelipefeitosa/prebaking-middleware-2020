@@ -19,7 +19,9 @@ generates the results artifacts used in the paper.
 
 ## Function Start-up Time Experiments
 
-TODO(): point to README.md
+The `Function Start-up Time` [README.md](function-startup/README.md)
+explains the format of the data CSV file, as well as documents each column 
+content.
 
 To generate the results artifacts for the `Function Start-up Experiment`,
 described in the paper section `4.2`, you must run the following commands:
@@ -37,7 +39,9 @@ normality test performed for the experimental results.
 
 ## Start-up Components Experiments
 
-TODO(): point to README.md
+The `Start-up Components Experiment` [README.md](startup-components/README.md)
+explains the format of the data CSV file, as well as documents each column 
+content.
 
 To generate the results artifacts for the `Start-up Components Experiment`,
 described in the paper section `4.2.1`, you must run the following commands:
@@ -52,7 +56,9 @@ This is the paper figure 4.
 
 ## Choosing Ingredients Experiments
 
-TODO(): point to README.md
+The `Choosing Ingredients Experiments` [README.md](choosing-ingredients/README.md)
+explains the format of the data CSV file, as well as documents each column 
+content.
 
 To generate the results artifacts for the `Choosing Ingredients Experiment`,
 described in the paper section `4.2.2`, you must run the following commands:
