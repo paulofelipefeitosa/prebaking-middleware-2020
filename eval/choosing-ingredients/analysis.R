@@ -7,7 +7,7 @@ read_service_time <- function(f) {
   df <- read.csv(f)
   df <- data.frame(
     Complexity=df[df$Metric=="ServiceTime", ]$Loaded_Classes,
-    Value=df[df$Metric=="ServiceTime", ]$Value_NS+df[df$Metric=="RuntimeReadyTime", ]$Value_NS,
+    Value=df[df$Metric=="ServiceTime", ]$Value+df[df$Metric=="RuntimeReadyTime", ]$Value,
     Technique=df[df$Metric=="ServiceTime", ]$Technique
   )
   colnames(df) <- c("app", "value", "technique")

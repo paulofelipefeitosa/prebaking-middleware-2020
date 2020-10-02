@@ -291,4 +291,25 @@ Please quick check this file and rename it to `ingredients-noop-big-prebaking-wa
 
 # Data Analysis
 
-TODO(paulofelipefeitosa): describe this section.
+After executing all the experimental scenarios, to analyze the data will be required to
+merge all the results artifacts into a file named `choosing-ingredients.csv`, 
+the following commands automate this task for you:
+
+``` shell script
+Rscript merge.R
+```
+
+The documentation of the file `choosing-ingredients.csv` can be accessed 
+[here](../eval/choosing-ingredients/README.md).
+
+After it, you can copy and execute the 
+[analysis script](../eval/choosing-ingredients/analysis.R) 
+by running the following commands:
+``` shell script
+cp prebaking-middleware-2020/eval/choosing-ingredients/analysis.R .
+Rscript analysis.R
+```
+
+The analysis script will load the file `choosing-ingredients.csv` and 
+generate the paper artifacts described 
+[here](../eval/README.md#choosing-ingredients-experiments).

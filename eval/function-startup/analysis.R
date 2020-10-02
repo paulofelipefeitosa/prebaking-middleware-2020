@@ -7,7 +7,7 @@ library(boot)
 
 # Reading data
 get_startup <- function(df) {
-  df <- df %>% filter(Metric == "RuntimeReadyTime" & ReqID == 0) %>% select(App, Value_NS, Technique)
+  df <- df %>% filter(Metric == "RuntimeReadyTime" & ReqID == 0) %>% select(App, Value, Technique)
   colnames(df) <- c("app", "value", "technique")
   df$value <- df$value / 10^6
   df <- df %>% mutate(app = ifelse(app == "NoOp", "NOOP", ifelse(app == "Markdown", "Markdown", "Image Resizer")))
@@ -88,7 +88,7 @@ ggsave("startup_cmp_nowarmup.png")
 
 # Reading data
 get_service_time <- function(df) {
-  df <- df %>% filter(Metric == "ServiceTime") %>% select(App, Value_NS, Technique)
+  df <- df %>% filter(Metric == "ServiceTime") %>% select(App, Value, Technique)
   colnames(df) <- c("app", "value", "technique")
   df$value <- df$value / 10^6
   df <- df %>% mutate(app = ifelse(app == "NoOp", "NOOP", ifelse(app == "Markdown", "Markdown", "Image Resizer")))

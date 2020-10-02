@@ -220,4 +220,25 @@ Please quick check this file and rename it to `startup-components-markdown-preba
 
 ## Data Analysis
 
-TODO(paulofelipefeitosa): describe this section.
+After executing all the experimental scenarios, to analyze the data will be required to
+merge all the results artifacts into a file named `java_treated_startup_bpftrace.csv`, 
+the following commands automate this task for you:
+
+``` shell script
+Rscript merge.R
+```
+
+The documentation of the file `java_treated_startup_bpftrace.csv` can be accessed 
+[here](../eval/startup-components/README.md).
+
+After it, you can copy and execute the 
+[analysis script](../eval/startup-components/analysis.R) 
+by running the following commands:
+``` shell script
+cp prebaking-middleware-2020/eval/startup-components/analysis.R .
+Rscript analysis.R
+```
+
+The analysis script will load the file `java_treated_startup_bpftrace.csv` and 
+generate the paper artifacts described 
+[here](../eval/README.md#start-up-components-experiments).

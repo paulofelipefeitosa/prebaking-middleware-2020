@@ -203,8 +203,24 @@ Please quick check this file and rename it to `startup-time-markdown-prebaking.c
 
 ## Data Analysis
 
-TODO(paulofelipefeitosa): describe this section.
+After executing all the experimental scenarios, to analyze the data will be required to
+merge all the results artifacts into a file named `function_start_nobpftrace.csv`, 
+the following commands automate this task for you:
 
-### Service Time
+``` shell script
+Rscript merge.R
+```
 
-TODO(paulofelipefeitosa): describe this section.
+The documentation of the file `function_start_nobpftrace.csv` can be accessed 
+[here](../eval/function-startup/README.md).
+
+After it, you can copy and execute the [analysis script](../eval/function-startup/analysis.R) 
+by running the following commands:
+``` shell script
+cp prebaking-middleware-2020/eval/function-startup/analysis.R .
+Rscript analysis.R
+```
+
+The analysis script will load the file `function_start_nobpftrace.csv` and generate
+the paper artifacts described 
+[here](../eval/README.md#function-start-up-time-experiments).
