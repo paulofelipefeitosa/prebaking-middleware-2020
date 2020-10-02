@@ -1,19 +1,3 @@
-# Ambos os csv's (Criu e NoCriu) possuem as seguintes métricas:
-# MainEntry -- Timestamp em nanosegundos do momento em que a app entrou no código Main.
-# MainExit -- Timestamp em nanosegundos do momento em que a app saiu do código Main.
-# Read2Serve -- Timestamp em nanosegundos do momento em que a função da app começou a atender a requisição.
-# RuntimeReadyTime -- Tempo em nanosegundos que levou para a função da app começar a atender a requisição.
-# ServiceTime -- Tempo em nanosegundos que levou para a função da app começar a servir/computar a requisição.
-# LatencyTime -- Tempo em nanosegundos que levou para a app responder a requisição.
-
-# Porém, a execução sem criu (NoCriu) possui as seguintes métricas adicionais:
-
-# LoadedClasses -- Quantidade de classes carregadas na função da app no momento da requisição
-# FindingClassesTime -- Tempo em nanosegundos que a função da app passou apenas encontrando as classes, ou seja, o tempo de lê os dados do arquivo .class e criar o objeto Class<?>.
-# CompilingClassesTime -- Tempo em nanosegundos que a função da app passou apenas criando as instâncias das classes pelo construtor de default (é sempre garantido que ele existe!).
-# LoadClassesTotalTime -- Tempo em nanosegundos que a função da app passou lendo as entradas do jar da função sintética (o nome dos arquivos .class da função sintética gerada), carregando e compilando todas as classes.
-# LoadingClassesOverheadTime -- Tempo em nanosegundos que durante o carregamento das classes a função da app não estava encontrando ou compilando classes, podemos interpretar como (LoadClassesTotalTime - FindingClassesTime - CompilingClassesTime).
-
 require(dplyr)
 require(ggplot2)
 require(reshape)
@@ -23,18 +7,19 @@ read_service_time <- function(f) {
   df <- read.csv(f)
   df <- data.frame(
     Complexity=df[df$Metric=="ServiceTime", ]$Loaded_Classes,
-    Value=df[df$Metric=="ServiceTime", ]$KernelTime_NS+df[df$Metric=="RuntimeReadyTime", ]$KernelTime_NS)
-  colnames(df) <- c("app", "value")
+    Value=df[df$Metric=="ServiceTime", ]$Value_NS+df[df$Metric=="RuntimeReadyTime", ]$Value_NS,
+    Technique=df[df$Metric=="ServiceTime", ]$Technique
+  )
+  colnames(df) <- c("app", "value", "technique")
   df$value <- df$value / 10^6
-  df <- df %>% mutate(app = ifelse(app == "50", "Small", ifelse(app == 250, "Medium", "Big")))
+  df <- df %>% mutate(app = ifelse(app == "50", "Small", ifelse(app == "250", "Medium", "Big")))
   return(df)
 }
-pb <- read_service_time("data/criu-nobpf-nogc-warmup-noop-class-loader.csv")
-pb$type <- "Prebaking-Warmup"
-pb1 <- read_service_time("data/criu-nobpf-nogc-nowarmup-noop-class-loader.csv")
-pb1$type <- "Prebaking-NOWarmup"
-vanilla <- read_service_time("data/nocriu-nobpftrace-nogc-nowarmup-noop-class-loader.csv")
-vanilla$type <- "Vanilla"
+data <- read_service_time("data/choosing-ingredients.csv")
+
+pb <- data %>% filter(technique == "Prebaking-Warmup")
+pb1 <- data %>% filter(technique == "Prebaking-NOWarmup")
+vanilla <- data %>% filter(technique == "Vanilla")
 
 calculate_median <- function(df, app) {
   df.t <- wilcox.test(df[df$app == app, ]$value, conf.int = T)
@@ -62,7 +47,7 @@ calculate_ratio <- function(pb, vanilla, app) {
   pb.t <- wilcox.test(pb[pb$app == app, ]$value, conf.int = T)
   vanilla.t <- wilcox.test(vanilla[vanilla$app == app, ]$value, conf.int = T)
   return(data.frame(
-    type=pb$type,
+    type=pb$technique,
     app=app,
     value=(vanilla.t$estimate/pb.t$estimate)*100,
     min=(vanilla.t$conf.int[1]/pb.t$conf.int[1])*100,
