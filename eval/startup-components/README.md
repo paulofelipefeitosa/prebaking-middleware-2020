@@ -1,4 +1,4 @@
-# Start-up Components Experiments
+# Start-up Components
 
 ## Data Format
 

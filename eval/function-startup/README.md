@@ -1,8 +1,8 @@
-# Title
+# Function Start-up Time
 
 ## Data Format
 
-The CSV file named `java_treated_startup_bpftrace.csv` inside the subdirectory 
+The CSV file named `function_startup_nobpftrace.csv` inside the subdirectory 
 `data` contains all collected metrics during the experiments' execution. The CSV
 file contains the following columns:
 
@@ -22,7 +22,7 @@ note that some metrics are *timestamps* and other are *time* values.
  collection. For these experiments we only evaluated *Java*.
 
 * **App** - the Application that was being execute during when the metric was
-collect. The Start-up Components Experiments evaluated the Apps (*Image Resizer*,
+collect. The Function Start-up Time Experiments evaluated the Apps (*Image Resizer*,
 *Markdown* and *NOOP*).
 
 * **Technique** - the technique used to start-up the application that was being
