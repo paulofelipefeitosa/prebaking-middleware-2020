@@ -19,7 +19,7 @@ experiments.
 
 First of all, you need to clone this repository by running the following commands:
 ``` shell script
-git clone https://github.com/paulofelipefeitosa/prebaking-middleware-2020
+git clone --recurse-submodules https://github.com/paulofelipefeitosa/prebaking-middleware-2020
 cd prebaking-middleware-2020
 ```
 

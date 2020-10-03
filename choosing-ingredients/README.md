@@ -54,7 +54,7 @@ Class Loader` maven target directory, and then rename the jar filename to
 the following commands:
 ``` bash
 $ mkdir -p serverless-handlers/functions/java/noop-class-loader/target
-$ cp choosing-ingredients/app-jars/noop-class-loader-small.jar \ 
+$ cp choosing-ingredients/app-jars/noop-class-loader-small.jar \
     serverless-handlers/functions/java/noop-class-loader/target/app-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 ```
 
@@ -65,8 +65,10 @@ experiment using the following commands:
 
 ``` bash
 # cd serverless-handlers
-# bash run-experiment.sh java noop-class-loader 200 no-criu ../noop-class-loader-config.json \
-    --sf_jar_path=../choosing-ingredients/synthetic-classes/small.jar > log.out 2> log.err
+# bash run-experiment.sh java noop-class-loader 200 no-criu \
+    ${PWD}/../noop-class-loader-config.json \
+    --sf_jar_path=${PWD}/../choosing-ingredients/synthetic-classes/small.jar \
+    > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
 execution logs. You can consult these files to identify any unexpected error 
@@ -87,8 +89,10 @@ experiment using the following commands:
 
 ``` bash
 # cd serverless-handlers
-# bash run-experiment.sh java noop-class-loader 200 criu ../noop-class-loader-config.json \
-    --sf_jar_path=../choosing-ingredients/synthetic-classes/small.jar > log.out 2> log.err
+# bash run-experiment.sh java noop-class-loader 200 criu \
+    ${PWD}/../noop-class-loader-config.json \
+    --sf_jar_path=${PWD}/../choosing-ingredients/synthetic-classes/small.jar \
+    > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
 execution logs.
@@ -108,8 +112,9 @@ experiment using the following commands:
 
 ``` bash
 # cd serverless-handlers
-# bash run-experiment.sh java noop-class-loader 200 criu ../noop-class-loader-config.json \
-    --sf_jar_path=../choosing-ingredients/synthetic-classes/small.jar \
+# bash run-experiment.sh java noop-class-loader 200 criu \
+    ${PWD}/../noop-class-loader-config.json \
+    --sf_jar_path=${PWD}/../choosing-ingredients/synthetic-classes/small.jar \
     --warm_req > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
@@ -137,7 +142,7 @@ Class Loader` maven target directory, and then rename the jar filename to
 the following commands:
 ``` bash
 $ mkdir -p serverless-handlers/functions/java/noop-class-loader/target
-$ cp choosing-ingredients/app-jars/noop-class-loader-medium.jar \ 
+$ cp choosing-ingredients/app-jars/noop-class-loader-medium.jar \
     serverless-handlers/functions/java/noop-class-loader/target/app-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 ```
 
@@ -148,8 +153,10 @@ experiment using the following commands:
 
 ``` bash
 # cd serverless-handlers
-# bash run-experiment.sh java noop-class-loader 200 no-criu ../noop-class-loader-config.json \
-    --sf_jar_path=../choosing-ingredients/synthetic-classes/medium.jar > log.out 2> log.err
+# bash run-experiment.sh java noop-class-loader 200 no-criu \
+    ${PWD}/../noop-class-loader-config.json \
+    --sf_jar_path=${PWD}/../choosing-ingredients/synthetic-classes/medium.jar \
+    > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
 execution logs. You can consult these files to identify any unexpected error 
@@ -170,8 +177,10 @@ experiment using the following commands:
 
 ``` bash
 # cd serverless-handlers
-# bash run-experiment.sh java noop-class-loader 200 criu ../noop-class-loader-config.json \
-    --sf_jar_path=../choosing-ingredients/synthetic-classes/medium.jar > log.out 2> log.err
+# bash run-experiment.sh java noop-class-loader 200 criu \
+    ${PWD}/../noop-class-loader-config.json \
+    --sf_jar_path=${PWD}/../choosing-ingredients/synthetic-classes/medium.jar \
+    > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
 execution logs.
@@ -191,8 +200,9 @@ experiment using the following commands:
 
 ``` bash
 # cd serverless-handlers
-# bash run-experiment.sh java noop-class-loader 200 criu ../noop-class-loader-config.json \
-    --sf_jar_path=../choosing-ingredients/synthetic-classes/medium.jar \
+# bash run-experiment.sh java noop-class-loader 200 criu \
+    ${PWD}/../noop-class-loader-config.json \
+    --sf_jar_path=${PWD}/../choosing-ingredients/synthetic-classes/medium.jar \
     --warm_req > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
@@ -220,7 +230,7 @@ Class Loader` maven target directory, and then rename the jar filename to
 the following commands:
 ``` bash
 $ mkdir -p serverless-handlers/functions/java/noop-class-loader/target
-$ cp choosing-ingredients/app-jars/noop-class-loader-big.jar \ 
+$ cp choosing-ingredients/app-jars/noop-class-loader-big.jar \
     serverless-handlers/functions/java/noop-class-loader/target/app-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 ```
 
@@ -231,8 +241,10 @@ experiment using the following commands:
 
 ``` bash
 # cd serverless-handlers
-# bash run-experiment.sh java noop-class-loader 200 no-criu ../noop-class-loader-config.json \
-    --sf_jar_path=../choosing-ingredients/synthetic-classes/big.jar > log.out 2> log.err
+# bash run-experiment.sh java noop-class-loader 200 no-criu \
+    ${PWD}/../noop-class-loader-config.json \
+    --sf_jar_path=${PWD}/../choosing-ingredients/synthetic-classes/big.jar \
+    > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
 execution logs. You can consult these files to identify any unexpected error 
@@ -253,8 +265,10 @@ experiment using the following commands:
 
 ``` bash
 # cd serverless-handlers
-# bash run-experiment.sh java noop-class-loader 200 criu ../noop-class-loader-config.json \
-    --sf_jar_path=../choosing-ingredients/synthetic-classes/big.jar > log.out 2> log.err
+# bash run-experiment.sh java noop-class-loader 200 criu \
+    ${PWD}/../noop-class-loader-config.json \
+    --sf_jar_path=${PWD}/../choosing-ingredients/synthetic-classes/big.jar \
+    > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
 execution logs.
@@ -274,8 +288,9 @@ experiment using the following commands:
 
 ``` bash
 # cd serverless-handlers
-# bash run-experiment.sh java noop-class-loader 200 criu ../noop-class-loader-config.json \
-    --sf_jar_path=../choosing-ingredients/synthetic-classes/big.jar \
+# bash run-experiment.sh java noop-class-loader 200 criu \
+    ${PWD}/../noop-class-loader-config.json \
+    --sf_jar_path=${PWD}/../choosing-ingredients/synthetic-classes/big.jar \
     --warm_req > log.out 2> log.err
 ```
 The files `log.out` and `log.err` file will contain the `stdout` and `stderr` 
@@ -296,7 +311,10 @@ merge all the results artifacts into a file named `choosing-ingredients.csv`,
 the following commands automate this task for you:
 
 ``` shell script
+cp ../choosing-ingredients/merge.R .
 Rscript merge.R
+mkdir data
+mv choosing-ingredients.csv data/
 ```
 
 The documentation of the file `choosing-ingredients.csv` can be accessed 
@@ -306,7 +324,7 @@ After it, you can copy and execute the
 [analysis script](../eval/choosing-ingredients/analysis.R) 
 by running the following commands:
 ``` shell script
-cp prebaking-middleware-2020/eval/choosing-ingredients/analysis.R .
+cp ../eval/choosing-ingredients/analysis.R .
 Rscript analysis.R
 ```
 

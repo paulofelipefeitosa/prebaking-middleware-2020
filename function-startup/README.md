@@ -208,7 +208,10 @@ merge all the results artifacts into a file named `function_start_nobpftrace.csv
 the following commands automate this task for you:
 
 ``` shell script
+cp ../function-startup/merge.R .
 Rscript merge.R
+mkdir data
+mv function_start_nobpftrace.csv data/
 ```
 
 The documentation of the file `function_start_nobpftrace.csv` can be accessed 
@@ -217,7 +220,7 @@ The documentation of the file `function_start_nobpftrace.csv` can be accessed
 After it, you can copy and execute the [analysis script](../eval/function-startup/analysis.R) 
 by running the following commands:
 ``` shell script
-cp prebaking-middleware-2020/eval/function-startup/analysis.R .
+cp ../eval/function-startup/analysis.R .
 Rscript analysis.R
 ```
 

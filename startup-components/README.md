@@ -225,7 +225,10 @@ merge all the results artifacts into a file named `java_treated_startup_bpftrace
 the following commands automate this task for you:
 
 ``` shell script
+cp ../startup-components/merge.R .
 Rscript merge.R
+mkdir data
+mv java_treated_startup_bpftrace.csv data/
 ```
 
 The documentation of the file `java_treated_startup_bpftrace.csv` can be accessed 
@@ -235,7 +238,7 @@ After it, you can copy and execute the
 [analysis script](../eval/startup-components/analysis.R) 
 by running the following commands:
 ``` shell script
-cp prebaking-middleware-2020/eval/startup-components/analysis.R .
+cp ../eval/startup-components/analysis.R .
 Rscript analysis.R
 ```
 
