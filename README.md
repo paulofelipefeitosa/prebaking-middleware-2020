@@ -23,12 +23,20 @@ git clone --recurse-submodules https://github.com/paulofelipefeitosa/prebaking-m
 cd prebaking-middleware-2020
 ```
 
-After it, you need to install all `serverless-handlers` dependencies that 
+After it, you need to install the following linux tools:
+* `libcurl`, `g++`, `wget`;
+* `R >= 4.0.0`.
+
+Also, it is required to install the following R packages: 
+* `dplyr`, `ggplot2`, `reshape` and `ggpubr`.
+
+Finally, you need to install all `serverless-handlers` dependencies that 
 were describe in the section 
 [dependencies](https://github.com/paulofelipefeitosa/serverless-handlers/blob/master/README.md#dependencies).
 
-In addition, you need to install `wget` in order to execute some commands 
-used in the next sections. 
+Please, note that we performed our experiments using Ubuntu `16.04` with Linux kernel 
+`4.15.0-45-generic-x86_64`. However, we already reproduced the experiments using 
+Debian 10 with Linux kernel `4.19.0-12`.
 
 ### Function Start-up Time Experiments
 

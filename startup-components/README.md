@@ -17,10 +17,25 @@ Before executing the experiments, its required to declare two environment variab
 1. **CRIU_BINARY_PATH** - the absolute path to CRIU's executable file.
 2. **JAVA_BINARY_PATH** - the absolute path to Java 8 executable file.
 
-These two variables can be declared using the following commands:
+First, you need to find the absolute path to CRIU and Java 8 executable files.
+The `whereis` command can report it to you. The following snippet shows `whereis` 
+execution examples for `criu` and `java`.
+```
+$ whereis java
+java: /usr/bin/java /usr/share/java /usr/share/man/man1/java.1.gz
+$ whereis criu
+criu: /usr/local/sbin/criu
+```
+
+Note that for `criu`, the `whereis` command found only the path `/usr/local/sbin/criu`. 
+However, `whereis` found multiple paths for `java`. In this case, **you can assume that
+the first one is the correct**.
+
+Then, after finding the absolute path to CRIU and Java 8 binaries, you can declare 
+the environment variables:
 ``` shell script
-# CRIU_BINARY_PATH=$(whereis criu)
-# JAVA_BINARY_PATH=$(whereis java)
+# CRIU_BINARY_PATH=/usr/local/sbin/criu
+# JAVA_BINARY_PATH=/usr/bin/java
 ```
 
 Please note that, all the following bash commands may require `super user` rights. 
