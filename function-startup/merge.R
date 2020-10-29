@@ -1,11 +1,11 @@
 noop_v <- read.csv("startup-time-noop-vanilla.csv")
 noop_v$Technique <- "Vanilla"
-noop_v$App <- "NOOP"
+noop_v$App <- "NoOp"
 noop_v$Runtime <- "Java"
 
 noop_pb <- read.csv("startup-time-noop-prebaking.csv")
 noop_pb$Technique <- "Prebaking"
-noop_pb$App <- "NOOP"
+noop_pb$App <- "NoOp"
 noop_pb$Runtime <- "Java"
 
 ir_v <- read.csv("startup-time-image_resizer-vanilla.csv")
@@ -27,6 +27,7 @@ mk_pb <- read.csv("startup-time-markdown-prebaking.csv")
 mk_pb$Technique <- "Prebaking"
 mk_pb$App <- "Markdown"
 mk_pb$Runtime <- "Java"
+
 
 all <- rbind(noop_v, noop_pb, ir_v, ir_pb, mk_v, mk_pb)
 
